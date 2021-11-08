@@ -1,4 +1,4 @@
-const { queryString } = require('./queryString');
+const { queryString, parse } = require('./queryString');
 
 describe('Object to query string', () => {
   it('should create a valid query string when an object is provided', () => {
@@ -35,6 +35,4 @@ it('should throw an error when an object is passed as value', () => {
   }).toThrowError();
 });
 
-// describe('Query string to object', () => {
-
-// });
+describe('Query string to object', () => {});
