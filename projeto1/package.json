@@ -6,7 +6,6 @@
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll"
-
   },
   "keywords": [],
   "author": "Lucas Oliveira",
@@ -14,5 +13,8 @@
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "jest": "^27.3.1"
+  },
+  "dependencies": {
+    "http-server": "^14.0.0"
   }
 }
