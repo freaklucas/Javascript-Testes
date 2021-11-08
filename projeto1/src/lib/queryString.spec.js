@@ -35,4 +35,18 @@ it('should throw an error when an object is passed as value', () => {
   }).toThrowError();
 });
 
-describe('Query string to object', () => {});
+describe('Query string to object', () => {
+  it('should convert a query string to object', () => {
+    const qs = 'name=Lucas&profession=developer';
+    expect(parse(qs)).toEqual({
+      name: 'Lucas',
+      profession: 'developer',
+    });
+  });
+  it('should convert a query string of a single key-value pair to object', () => {
+    const qs = 'name=Lucas';
+    expect(parse(qs)).toEqual({
+      name: 'Lucas',
+    });
+  });
+});
