@@ -55,4 +55,40 @@ describe('Cart ', () => {
       expect(cart.getTotal()).toEqual(41872);
     });
   });
+
+  describe('checkout()', () => {
+    it('should return an object with the total and the list of items', () => {
+      cart.add({
+        product,
+        quantity: 2,
+      });
+
+      cart.add({
+        product: product2,
+        quantity: 3,
+      });
+
+      expect(cart.checkout()).toMatchSnapshot(`
+Object {
+  "items": Array [
+    Object {
+      "product": Object {
+        "price": 35388,
+        "title": "Adidas running shoes - men",
+      },
+      "quantity": 2,
+    },
+    Object {
+      "product": Object {
+        "price": 41872,
+        "title": "Adidas running shoes - women",
+      },
+      "quantity": 3,
+    },
+  ],
+  "total": 196392,
+}
+`);
+    });
+  });
 });
